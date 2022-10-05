@@ -60,7 +60,8 @@ PRODUCT_PACKAGES += \
 # Overlays
 PRODUCT_PACKAGES += \
     WifiResOverlayDarwin \
-    FrameworkResOverlayDarwin
+    FrameworkResOverlayDarwin \ 
+    DialerOverlayDarwin
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true

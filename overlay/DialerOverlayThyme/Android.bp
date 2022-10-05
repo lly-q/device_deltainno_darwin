@@ -1,0 +1,7 @@
+runtime_resource_overlay {
+    name: "DialerOverlayDarwin",
+    theme: "DialerOverlayDarwin",
+    certificate: "platform",
+    sdk_version: "current",
+    product_specific: true
+}
