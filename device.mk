@@ -33,6 +33,15 @@ AB_OTA_POSTINSTALL_CONFIG += \
 TARGET_SCREEN_HEIGHT := 2340
 TARGET_SCREEN_WIDTH := 1080
 
+# Boot control
+PRODUCT_PACKAGES += \
+    android.hardware.boot@1.1-impl-qti \
+    android.hardware.boot@1.1-impl-qti.recovery \
+    bootctrl.kona.recovery
+
+PRODUCT_PACKAGES_DEBUG += \
+    bootctl
+
 # Common init scripts
 PRODUCT_PACKAGES += \
     init.recovery.qcom.rc
@@ -41,7 +50,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock \
     fastbootd
-
+kona
 # F2FS utilities
 PRODUCT_PACKAGES += \
     sg_write_buffer \
