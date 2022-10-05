@@ -1,4 +1,4 @@
-Copyright (C) 2022 The TeamWin Recovery Project
+Copyright (C) 2022 The LineageOS Project
 
 Unified device configuration for Smartisan Nut R2
 =========================================
