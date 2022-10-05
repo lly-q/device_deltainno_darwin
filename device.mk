@@ -4,6 +4,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+DARWIN_PREBUILT := device/deltainno/darwin-prebuilt
+
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
@@ -56,6 +58,10 @@ PRODUCT_PACKAGES += \
     sg_write_buffer \
     f2fs_io \
     check_f2fs
+
+# Kernel
+PRODUCT_COPY_FILES += \
+    $(DARWIN_PREBUILT)/kernel/dtb.img:dtb.img
 
 # Overlays
 PRODUCT_PACKAGES += \
