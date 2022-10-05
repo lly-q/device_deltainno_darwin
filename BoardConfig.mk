@@ -116,5 +116,9 @@ BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 1
 # Sepolicy
 include device/qcom/sepolicy/SEPolicy.mk
 
+# VINTF
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/vintf/manifest.xml
+DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/vintf/compatibility_matrix.xml
+
 # VNDK
 BOARD_VNDK_VERSION := current
