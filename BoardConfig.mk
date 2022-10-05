@@ -5,6 +5,7 @@
 #
 
 DEVICE_PATH := device/deltainno/darwin
+DARWIN_PREBUILT := device/deltainno/darwin-prebuilt
 
 BUILD_BROKEN_DUP_RULES := true
 
@@ -14,6 +15,7 @@ AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
     boot \
     dtbo \
+    odm \
     product \
     system \
     system_ext \
@@ -75,8 +77,9 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3007426560
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_COPY_OUT_VENDOR := vendor
-
+BOARD_PREBUILT_ODMIMAGE := $(DARWIN_PREBUILT)/odm.img
 BOARD_DARWIN_DYNAMIC_PARTITIONS_PARTITION_LIST := product system system_ext odm
+
 BOARD_SUPER_PARTITION_SIZE := 9126805504
 BOARD_SUPER_PARTITION_GROUPS := darwin_dynamic_partitions
 BOARD_DARWIN_DYNAMIC_PARTITIONS_SIZE := 2777190400

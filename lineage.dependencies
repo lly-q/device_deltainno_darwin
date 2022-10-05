@@ -1,2 +1,6 @@
 [
+  {
+    "repository": "android_device_deltainno_darwin-prebuilt",
+    "target_path": "device/deltainno/darwin-prebuilt"
+  }
 ]
