@@ -33,6 +33,12 @@ AB_OTA_POSTINSTALL_CONFIG += \
     FILESYSTEM_TYPE_system=ext4 \
     POSTINSTALL_OPTIONAL_system=true
 
+AB_OTA_POSTINSTALL_CONFIG += \
+    RUN_POSTINSTALL_vendor=true \
+    POSTINSTALL_PATH_vendor=bin/checkpoint_gc \
+    FILESYSTEM_TYPE_vendor=ext4 \
+    POSTINSTALL_OPTIONAL_vendor=true
+
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
@@ -93,7 +99,6 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 # RRO Overlays
 PRODUCT_PACKAGES += \
-<<<<<<< HEAD
     FrameworkResOverlayDarwin \
     WifiResOverlayDarwin \
     DialerOverlayDarwin \
@@ -139,6 +144,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     otapreopt_script \
     update_engine \
+    checkpoint_gc \
     update_engine_sideload \
     update_verifier
 
