@@ -64,6 +64,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(DARWIN_PREBUILT)/kernel/dtb.img:dtb.img
 
+# NFC
+PRODUCT_PACKAGES += \
+    NfcNci \
+    Tag \
+    SecureElement \
+    com.android.nfc_extras
+
 # Overlays
 PRODUCT_PACKAGES += \
     FrameworkResOverlayDarwin \
