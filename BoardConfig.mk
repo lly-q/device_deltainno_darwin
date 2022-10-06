@@ -23,7 +23,8 @@ AB_OTA_PARTITIONS += \
     system_ext \
     odm\
     vbmeta \
-    vbmeta_system
+    vbmeta_system \
+    vendor
 
 # Architecture
 TARGET_ARCH := arm64
@@ -87,7 +88,9 @@ BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_COPY_OUT_VENDOR := vendor
 BOARD_PREBUILT_ODMIMAGE := $(DARWIN_PREBUILT)/odm.img
-BOARD_DARWIN_DYNAMIC_PARTITIONS_PARTITION_LIST := product system system_ext odm
+BOARD_DARWIN_DYNAMIC_PARTITIONS_PARTITION_LIST := product system system_ext odm vendor
+
+BOARD_PREBUILT_VENDORIMAGE := $(DARWIN_PREBUILT)/vendor.img
 
 BOARD_SUPER_PARTITION_SIZE := 9126805504
 BOARD_SUPER_PARTITION_GROUPS := darwin_dynamic_partitions
