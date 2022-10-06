@@ -3,6 +3,8 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 #
+# Inherit from the proprietary version
+-include vendor/deltainno/darwin/BoardConfigVendor.mk
 
 DEVICE_PATH := device/deltainno/darwin
 DARWIN_PREBUILT := device/deltainno/darwin-prebuilt
