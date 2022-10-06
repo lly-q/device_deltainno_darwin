@@ -76,7 +76,8 @@ PRODUCT_PACKAGES += \
     FrameworkResOverlayDarwin \
     WifiResOverlayDarwin \
     DialerOverlayDarwin \
-    SettingsOverlayDarwin
+    SettingsOverlayDarwin \
+    CarrierConfigOverlayThyme
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
