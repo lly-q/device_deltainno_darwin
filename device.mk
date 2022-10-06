@@ -93,11 +93,13 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 # RRO Overlays
 PRODUCT_PACKAGES += \
+<<<<<<< HEAD
     FrameworkResOverlayDarwin \
     WifiResOverlayDarwin \
     DialerOverlayDarwin \
     SettingsOverlayDarwin \
-    CarrierConfigOverlayThyme
+    CarrierConfigOverlayDarwin \
+    SystemUIOverlayDarwin
 
 # Overlays - override vendor ones
 PRODUCT_PACKAGES += \
