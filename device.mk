@@ -8,6 +8,7 @@ $(call inherit-product, vendor/deltainno/darwin/darwin-vendor.mk)
 DARWIN_PREBUILT := device/deltainno/darwin-prebuilt
 
 
+
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
@@ -45,8 +46,6 @@ PRODUCT_PACKAGES += \
     libaacwrapper
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio/audio_policy_configuration.xml \
-    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PRODUCT_TARGET_VNDK_VERSION)/etc/audio_policy_configuration.xml
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2340
@@ -119,7 +118,9 @@ PRODUCT_BUILD_SUPER_PARTITION := false
 
 # Perf
 PRODUCT_PACKAGES += \
-    vendor.qti.hardware.perf@2.2
+    vendor.qti.hardware.perf@2.2 \
+    libthermalclient \
+    libfastcvopt
 
 # Properties
 include $(LOCAL_PATH)/properties/default.mk

@@ -59,7 +59,7 @@ TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_darwin
 TARGET_RECOVERY_DEVICE_MODULES := libinit_darwin
 
 # Kernel
-BOARD_BOOT_HEADER_VERSION := 3
+BOARD_BOOT_HEADER_VERSION := 2
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_BINARIES := kernel
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.console=ttyMSM0 androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 androidboot.usbcontroller=a600000.dwc3 swiotlb=2048 loop.max_part=7 cgroup.memory=nokmem,nosocket reboot=panic_warm
@@ -75,12 +75,13 @@ BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 
-TARGET_KERNEL_CONFIG := vendor/darwin_defconfig
+TARGET_KERNEL_CONFIG := darwin_defconfig
 TARGET_KERNEL_SOURCE := kernel/deltainno/darwin
 TARGET_FORCE_PREBUILT_KERNEL := true
 TARGET_PREBUILT_KERNEL := $(DARWIN_PREBUILT)/kernel/Image
 TARGET_PREBUILT_DTB := $(DARWIN_PREBUILT)/kernel/dtb.img
 BOARD_PREBUILT_DTBOIMAGE := $(DARWIN_PREBUILT)/kernel/dtbo.img
+#TARGET_KERNEL_HEADERS = $(DEVICE_PATH)/kernel-headers
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
@@ -97,11 +98,9 @@ TARGET_COPY_OUT_VENDOR := vendor
 BOARD_PREBUILT_ODMIMAGE := $(DARWIN_PREBUILT)/odm.img
 BOARD_DARWIN_DYNAMIC_PARTITIONS_PARTITION_LIST := product system system_ext odm vendor
 
-BOARD_PREBUILT_VENDORIMAGE := $(DARWIN_PREBUILT)/vendor.img
-
 BOARD_SUPER_PARTITION_SIZE := 9126805504
 BOARD_SUPER_PARTITION_GROUPS := darwin_dynamic_partitions
-BOARD_DARWIN_DYNAMIC_PARTITIONS_SIZE := 2777190400
+BOARD_DARWIN_DYNAMIC_PARTITIONS_SIZE := 10737418240
 
 BOARD_PARTITION_LIST := $(call to-upper, $(BOARD_DARWIN_DYNAMIC_PARTITIONS_PARTITION_LIST))
 $(foreach p, $(BOARD_PARTITION_LIST), $(eval BOARD_$(p)IMAGE_FILE_SYSTEM_TYPE := ext4))
@@ -116,7 +115,6 @@ TARGET_BOARD_PLATFORM := kona
 # Properties
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/properties/product.prop
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/properties/system.prop
-TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/properties/system_ext.prop
 
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
@@ -141,6 +139,10 @@ BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 1
 
 # Sepolicy
 include device/qcom/sepolicy/SEPolicy.mk
+
+# Gms
+WHITH_GMS := true
+
 
 # VINTF
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/vintf/manifest.xml
