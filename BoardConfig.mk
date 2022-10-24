@@ -150,3 +150,6 @@ DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/vintf/compatibility_matrix.xml
 
 # VNDK
 BOARD_VNDK_VERSION := current
+
+# Include the proprietary files BoardConfig.
+include vendor/deltainno/darwin/BoardConfigVendor.mk
