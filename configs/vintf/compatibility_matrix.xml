@@ -83,6 +83,30 @@
             <instance>default</instance>
         </interface>
     </hal>
+        <hal format="hidl" optional="true">
+        <name>android.hardware.graphics.allocator</name>
+        <version>4.0</version>
+        <interface>
+            <name>IAllocator</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+        <hal format="hidl" optional="true">
+        <name>android.hardware.graphics.composer</name>
+        <version>2.1-4</version>
+        <interface>
+            <name>IComposer</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+        <hal format="hidl" optional="true">
+        <name>android.hardware.health</name>
+        <version>2.1</version>
+        <interface>
+            <name>IHealth</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
     <vendor-ndk>
         <version>30</version>
     </vendor-ndk>
