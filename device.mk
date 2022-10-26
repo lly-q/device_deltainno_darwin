@@ -5,6 +5,7 @@
 #
 
 $(call inherit-product, vendor/deltainno/darwin/darwin-vendor.mk)
+DARWIN_PREBUILT := device/deltainno/darwin-prebuilt
 
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
@@ -138,6 +139,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.hardware.telephony.ims.xml
 
+# Vendor boot modules
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(DARWIN_PREBUILT)/modules/,$(TARGET_COPY_OUT_VENDOR)/lib/modules)
+
 # Update engine
 PRODUCT_PACKAGES += \
     otapreopt_script \
@@ -161,6 +166,9 @@ PRODUCT_PACKAGES += \
     libqdMetaData \
     libwfdaac_vendor \
     vendor.display.config@2.0
+
+PRODUCT_PACKAGES += \
+    fstab.qcom 
 
 PRODUCT_BOOT_JARS += \
     WfdCommon
