@@ -139,9 +139,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.hardware.telephony.ims.xml
 
-# Vendor boot modules
+# Vendor boot modules & boot fstab
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(DARWIN_PREBUILT)/modules/,$(TARGET_COPY_OUT_VENDOR)/lib/modules)
+    $(call find-copy-subdir-files,*,$(DARWIN_PREBUILT)/modules/,$(TARGET_COPY_OUT_VENDOR)/lib/modules) \
+    $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom
 
 # Update engine
 PRODUCT_PACKAGES += \
